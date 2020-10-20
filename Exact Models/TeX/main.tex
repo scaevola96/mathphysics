@@ -1,0 +1,62 @@
+\documentclass{article}
+
+% If you're new to LaTeX, here's some short tutorials:
+% https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+% https://en.wikibooks.org/wiki/LaTeX/Basics
+
+% Formatting
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[titletoc,title]{appendix}
+
+% Math
+% https://www.overleaf.com/learn/latex/Mathematical_expressions
+% https://en.wikibooks.org/wiki/LaTeX/Mathematics
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+
+% Images
+% https://www.overleaf.com/learn/latex/Inserting_Images
+% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+\usepackage{graphicx,float}
+
+% Tables
+% https://www.overleaf.com/learn/latex/Tables
+% https://en.wikibooks.org/wiki/LaTeX/Tables
+
+% Algorithms
+% https://www.overleaf.com/learn/latex/algorithms
+% https://en.wikibooks.org/wiki/LaTeX/Algorithms
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algorithmic}
+
+% Code syntax highlighting
+% https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted
+
+
+
+% References
+% https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\title{Exact Models}
+\author{Sergey Barseghyan, Ilya Danilin}
+\date{October, 2020}
+
+\begin{document}
+
+\maketitle
+
+\begin{equation}
+\begin{aligned}
+    \int_{0}^{+\infty} x^n e^{-x^r} \diff x = \left| x^r = t \right| = \frac{1}{r} \int_{0}^{+\infty} t^{1+\frac{n-r}{r}} e^{-t} t^{\frac{1}{r} -1} \diff t
+    =  \frac{1}{r} \int_{0}^{+\infty} t^{\frac{n+1}{r}-1} e^{-t} \diff t =  \frac{1}{r} \Gamma\left({\frac{n+1}{r}}\right)
+\end{aligned}
+\end{equation}
+
+
+\end{document}
